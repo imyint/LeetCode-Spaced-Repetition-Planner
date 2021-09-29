@@ -1,0 +1,5 @@
+dateparser==1.0.0
+notion @ git+https://github.com/jamalex/notion-py.git@185a83541f78a57a25b43086846567dcce021d7c
+schedule==1.1.0
+selenium==3.141.0
+
