@@ -73,7 +73,9 @@ def get_ac_problems():
             # Only pulling newly solved problems (<24 hours)
             if dateparser.parse(time_submitted).date() == date.today() and status == "Accepted":
                 ac_leetcode_problems.append(question)
-                
+            else:
+                return
+            
         try:
             # Load next submission page
             next_page = driver.find_elements_by_class_name("next")[0].find_element(By.TAG_NAME, "a").get_attribute('href')
@@ -111,7 +113,7 @@ def script():
 
 if __name__ == '__main__':
    # Replace with day/time you would like script to check for new problems
-   schedule.every().day.at('').do(script)
+   schedule.every().day.at('16:30').do(script)
 
    while True:  
        schedule.run_pending()
